@@ -1,4 +1,4 @@
-http-tunnel
-===========
+http-tunneld
+===
 
-nodejs global program to create http tunnel
+nodejs global program to utilize http tunnel
