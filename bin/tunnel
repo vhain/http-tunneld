@@ -3,7 +3,6 @@
 'use strict';
 
 var url = require('url');
-var http = require('http');
 var winston = require('winston');
 
 var opts = require('nomnom')
