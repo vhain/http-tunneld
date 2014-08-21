@@ -1,0 +1,22 @@
+{
+  "name": "http-tunnel",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "description": "",
+  "bin": {
+    "tunnel": "./bin/tunnel"
+  },
+  "directories": {
+    "bin": "./bin"
+  },
+  "author": "Juwan Yoo <vhain6512@gmail.com> (https://github.com/vhain)",
+  "license": "ALv2",
+  "dependencies": {
+    "nomnom": "^1.8.0",
+    "winston": "^0.7.3"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.0.4"
+  }
+}
