@@ -2,7 +2,6 @@
 
 'use strict';
 
-var url = require('url');
 var winston = require('winston');
 
 var opts = require('nomnom')
@@ -21,7 +20,7 @@ var opts = require('nomnom')
     required: true,
     help    : 'Listening port for tunneling server'
   })
-  .option('destination', {
+  .option('dest', {
     abbr    : 'd',
     required: true,
     help    : 'Final destination to connect through tunnel (eg. target.internet:3211)'
@@ -37,17 +36,10 @@ winston.add(winston.transports.Console, {
   }
 });
 
-var listen_port = opts.port;
-var proxy_opt = url.parse(opts.proxy);
-var host = opts.destination;
-
 var server = require('../index')({
-  proxy: {
-    hostname: proxy_opt.hostname,
-    port: proxy_opt.port
-  },
-  destination: opts.destination
+  proxy: opts.proxy,
+  dest : opts.dest
 });
 
-server.listen(listen_port);
-winston.info('http tunneling server to %s through %s listening from %d', host, opts.proxy, listen_port);
+server.listen(opts.port);
+winston.info('http tunneling server to %s through %s listening from %d', opts.dest, opts.proxy, opts.port);

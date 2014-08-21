@@ -1,10 +1,10 @@
 {
   "name": "http-tunneld",
   "preferGlobal": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "bin": {
-    "tunnel": "./bin/tunnel"
+    "tunneld": "./bin/tunneld"
   },
   "directories": {
     "bin": "./bin"
@@ -12,6 +12,7 @@
   "author": "Juwan Yoo <vhain6512@gmail.com> (https://github.com/vhain)",
   "license": "ALv2",
   "dependencies": {
+    "lodash": "^2.4.1",
     "nomnom": "^1.8.0",
     "winston": "^0.7.3"
   },
