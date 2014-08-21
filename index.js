@@ -1,4 +1,7 @@
+'use strict';
+
 var winston = require('winston');
+var net = require('net');
 
 function createServer(opts) {
   var server = net.createServer(function (c) {

@@ -1,4 +1,7 @@
-var net = require('net');
+#!/usr/bin/env node
+
+'use strict';
+
 var url = require('url');
 var http = require('http');
 var winston = require('winston');
@@ -48,4 +51,4 @@ var server = require('../index')({
 });
 
 server.listen(listen_port);
-winston.info('http tunneling server to %s through %s listening from %d', host, http_proxy, listen_port);
+winston.info('http tunneling server to %s through %s listening from %d', host, opts.proxy, listen_port);
