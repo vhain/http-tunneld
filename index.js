@@ -7,15 +7,17 @@ var _ = require('lodash');
 var url = require('url');
 
 function createServer(opts) {
+  var proxy = opts.proxy;
+
+  if (_.isString(proxy))
+    proxy = url.parse(proxy);
+
   var server = net.createServer(function (c) {
     winston.verbose('connection received. requesting proxy server');
 
-    if (_.isString(opts.proxy))
-      opts.proxy = url.parse(opts.proxy);
-
     var req = http.request({
-      hostname: opts.proxy.hostname,
-      port    : opts.proxy.port,
+      hostname: proxy.hostname,
+      port    : proxy.port,
       path    : opts.dest,
       method  : 'CONNECT'
     });

@@ -1,6 +1,6 @@
 # http-tunneld
 
-nodejs global program to utilize http tunnel
+nodejs global module to utilize http tunnel
 
 ## use as node_module
 install
@@ -14,7 +14,7 @@ which will pipe data through proxy to dest.
 ```javascript
 var tunnel = require('http-tunneld')({
   proxy: 'http://proxy.intranet:3218',
-  dest: 'http://target.internet'
+  dest: 'target.internet'
 });
 tunnel.listen(3128);
 ```
@@ -28,7 +28,7 @@ install
 run
 
 ```
-tunnel --verbose --proxy http://proxy.intranet:3128 --port 3128 --dest http://target.internet
+tunneld --verbose --proxy http://proxy.intranet:3128 --port 3128 --dest target.internet
 ```
 
 you might consider running http-tunneld using [pm2](https://github.com/Unitech/pm2) to daemonize.
